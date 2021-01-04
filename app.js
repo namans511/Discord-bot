@@ -34,11 +34,11 @@ client.on("message", (message) => {
       (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
     );
 
+  if (!command) return;
+
   if (command.args && !args.length) {
     return message.reply(`You didn't provide any arguments`);
   }
-
-  if (!command) return;
 
   try {
     command.execute(message, args);
@@ -46,6 +46,11 @@ client.on("message", (message) => {
     console.error(error);
     message.reply("There was an error trying to execute that command!");
   }
+});
+
+client.on("messageReactionAdd", (message) => {
+  console.log("you reaxx");
+  console.log(message);
 });
 
 
