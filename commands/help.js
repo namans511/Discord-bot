@@ -22,6 +22,7 @@ module.exports = {
         .then(() => {
           if (message.channel.type === "dm") return;
           message.reply("I've sent you a DM with all my commands!");
+          message.react("🤡");
         })
         .catch((error) => {
           console.error(
