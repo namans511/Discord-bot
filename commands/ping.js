@@ -1,7 +1,8 @@
 module.exports = {
   name: "ping",
   description: "Ping!",
+  aliases: ["p"],
   execute(message, args) {
-    message.reply("bsdk tumhare lund se ping pong khelenge");
+    message.reply("pong!");
   },
 };
