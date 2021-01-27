@@ -3,6 +3,13 @@ module.exports = {
   description: "Ping!",
   aliases: ["p"],
   execute(message, args) {
-    message.reply("pong!");
+    message.channel.send(`Pong!\nHeartbeat: ${message.client.ws.ping}ms`);
+    message.channel.send("Pinging...").then((sent) => {
+      sent.edit(
+        `Roundtrip latency: ${
+          sent.createdTimestamp - message.createdTimestamp
+        }ms`
+      );
+    });
   },
 };

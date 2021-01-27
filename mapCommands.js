@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 module.exports = (client) => {
+  client.debug = false; // initally turning off debugging
+
   client.commands = new Discord.Collection();
 
   const commandFiles = fs
@@ -12,4 +14,4 @@ module.exports = (client) => {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
   }
-};
+};;

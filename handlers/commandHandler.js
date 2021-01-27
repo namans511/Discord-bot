@@ -1,7 +1,7 @@
 const prefix = process.env.BOT_PREFIX;
 
 module.exports = (message) => {
-  if (!message.author.bot) console.log(message.content);
+  if (!message.author.bot && message.client.debug) console.log(message.content);
   const client = message.client;
 
   if (!message.content.startsWith(prefix) || message.author.bot) return;
