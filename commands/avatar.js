@@ -13,7 +13,7 @@ module.exports = {
       const avatarEmbed = new Discord.MessageEmbed()
         .setDescription(`${message.author}`)
         .setColor("#0099ff")
-        .setTitle(`Avatar for ${message.author.username}`)
+        .setTitle(`Avatar for ${message.author.tag}`)
         .setImage(avatarUrl);
 
       return message.channel.send(avatarEmbed);
@@ -27,7 +27,7 @@ module.exports = {
       const avatarEmbed = new Discord.MessageEmbed()
         .setDescription(`${user}`)
         .setColor("#0099ff")
-        .setTitle(`Avatar for ${user.username}`)
+        .setTitle(`Avatar for ${user.tag}`)
         .setImage(avatarUrl);
 
       return message.channel.send(avatarEmbed);

@@ -1,0 +1,10 @@
+module.exports = {
+  name: "sample",
+  description: "sample command",
+  aliases: [""],
+  usage: "[command name]",
+  cooldown: 5,
+  execute(message, args) {
+    message.channel.send("this is new comand");
+  },
+};
