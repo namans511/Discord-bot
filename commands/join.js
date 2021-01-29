@@ -9,12 +9,12 @@ module.exports = {
       if (message.guild && message.member.voice.channel) {
         const connection = await message.member.voice.channel.join();
         message.reply("kar liya join ✅");
-        const stream = ytdl("https://www.youtube.com/watch?v=_t46p_nFruU", {
+        const stream = ytdl("https://www.youtube.com/watch?v=Oxr7OQKoY8Q", {
           filter: "audioonly",
         });
         const dispatcher = connection.play(stream);
 
-        dispatcher.on("finish", () => voiceChannel.leave());
+        dispatcher.on("finish", () => message.member.voice.channel.leave());
       } else {
         return message.reply("saale vc to join karlo pehele ❌");
       }
